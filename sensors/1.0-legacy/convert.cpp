@@ -31,7 +31,7 @@ void convertFromSensor(const sensor_t &src, SensorInfo *dst) {
     dst->sensorHandle = src.handle;
     dst->type = (SensorType)src.type;
     dst->maxRange = src.maxRange;
-    if (dst->type == SensorType::PROXIMITY && src.resolution == 0) {
+    if (src.resolution == 0) {
         dst->resolution = src.maxRange;
     } else {
         dst->resolution = src.resolution;
